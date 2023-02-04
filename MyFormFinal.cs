@@ -317,10 +317,10 @@ namespace Pt2pt
 
             timeReproduce.Text = ((DateTime.Now - startR).TotalSeconds).ToString();
 
-            if (scene.RFigures.Count == fnum)
+            /*if (scene.RFigures.Count == fnum)
             {
                 START.BackColor = Color.Red;
-            }
+            }*/
         }
 
         //Método para verificar que el TIMER2 se detenga después de 5s
