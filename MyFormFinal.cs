@@ -284,7 +284,9 @@ namespace Pt2pt
                 {
                     f2.Add(scene.Figures[p].Pts[i]);
                 }
-                scene.RFigures.Add(f2);
+                //Por el momento solo guarda las figuras de más de dos puntos
+                if (f2.Pts.Count > 2)
+                    scene.RFigures.Add(f2);
             }
         }
 
@@ -293,12 +295,13 @@ namespace Pt2pt
         {
             isTime();
             recoverPoints();
+            numElements.Text = (scene.RFigures.Count).ToString();
         }
 
         //TIMER3
         private void TIMER3_Tick(object sender, EventArgs e)
         {
-            isTime2();
+            //isTime2();
 
             //Se renderiza la escena para cada figura guardada en la grabación
             if(scene.RFigures.Count > fnum)
@@ -307,6 +310,17 @@ namespace Pt2pt
                 //fnum se incrementa para ir recorriendo la lista de figuras guardadas
                 fnum++;
             }
+            else
+            {
+                TIMER3.Stop();
+            }
+
+            timeReproduce.Text = ((DateTime.Now - startR).TotalSeconds).ToString();
+
+            if (scene.RFigures.Count == fnum)
+            {
+                START.BackColor = Color.Red;
+            }
         }
 
         //Método para verificar que el TIMER2 se detenga después de 5s
@@ -314,7 +328,7 @@ namespace Pt2pt
         {
             seconds.Text = ((DateTime.Now - start).TotalSeconds).ToString();
 
-            if ((DateTime.Now - start).TotalSeconds >= 5)
+            if ((DateTime.Now - start).TotalSeconds >= 5.00)
             {
                 TIMER2.Stop();
             }
@@ -322,7 +336,9 @@ namespace Pt2pt
         //Método para revisar que el TIMER3 se detenga después de 5s
         private void isTime2()
         {
-            if ((DateTime.Now - startR).TotalSeconds >= 5)
+            timeReproduce.Text = ((DateTime.Now - startR).TotalSeconds).ToString();
+
+            if ((DateTime.Now - startR).TotalSeconds >= 5.00)
             {
                 TIMER3.Stop();
             }

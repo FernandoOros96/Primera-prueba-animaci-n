@@ -50,6 +50,9 @@
             this.TIMER2 = new System.Windows.Forms.Timer(this.components);
             this.TIMER3 = new System.Windows.Forms.Timer(this.components);
             this.seconds = new System.Windows.Forms.Label();
+            this.timeReproduce = new System.Windows.Forms.Label();
+            this.numElements = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.PNL_HEADER.SuspendLayout();
             this.PNL_BOTTOM.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PCT_CANVAS)).BeginInit();
@@ -205,6 +208,9 @@
             // PNL_RIGHT
             // 
             this.PNL_RIGHT.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.PNL_RIGHT.Controls.Add(this.label1);
+            this.PNL_RIGHT.Controls.Add(this.numElements);
+            this.PNL_RIGHT.Controls.Add(this.timeReproduce);
             this.PNL_RIGHT.Controls.Add(this.seconds);
             this.PNL_RIGHT.Controls.Add(this.PCT_SLIDEER_Y);
             this.PNL_RIGHT.Dock = System.Windows.Forms.DockStyle.Right;
@@ -280,19 +286,19 @@
             // TIMER
             // 
             this.TIMER.Enabled = true;
-            this.TIMER.Interval = 30;
+            this.TIMER.Interval = 50;
             this.TIMER.Tick += new System.EventHandler(this.TIMER_Tick);
             // 
             // TIMER2
             // 
             this.TIMER2.Enabled = true;
-            this.TIMER2.Interval = 40;
+            this.TIMER2.Interval = 50;
             this.TIMER2.Tick += new System.EventHandler(this.TIMER2_Tick);
             // 
             // TIMER3
             // 
             this.TIMER3.Enabled = true;
-            this.TIMER3.Interval = 10;
+            this.TIMER3.Interval = 50;
             this.TIMER3.Tick += new System.EventHandler(this.TIMER3_Tick);
             // 
             // seconds
@@ -303,6 +309,34 @@
             this.seconds.Size = new System.Drawing.Size(14, 16);
             this.seconds.TabIndex = 7;
             this.seconds.Text = "0";
+            // 
+            // timeReproduce
+            // 
+            this.timeReproduce.AutoSize = true;
+            this.timeReproduce.ForeColor = System.Drawing.Color.IndianRed;
+            this.timeReproduce.Location = new System.Drawing.Point(102, 214);
+            this.timeReproduce.Name = "timeReproduce";
+            this.timeReproduce.Size = new System.Drawing.Size(14, 16);
+            this.timeReproduce.TabIndex = 8;
+            this.timeReproduce.Text = "0";
+            // 
+            // numElements
+            // 
+            this.numElements.AutoSize = true;
+            this.numElements.Location = new System.Drawing.Point(102, 295);
+            this.numElements.Name = "numElements";
+            this.numElements.Size = new System.Drawing.Size(14, 16);
+            this.numElements.TabIndex = 9;
+            this.numElements.Text = "0";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(52, 270);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(144, 16);
+            this.label1.TabIndex = 10;
+            this.label1.Text = "Number of figures in list";
             // 
             // MyForm
             // 
@@ -364,5 +398,8 @@
         private System.Windows.Forms.Timer TIMER2;
         private System.Windows.Forms.Timer TIMER3;
         private System.Windows.Forms.Label seconds;
+        private System.Windows.Forms.Label timeReproduce;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label numElements;
     }
 }
